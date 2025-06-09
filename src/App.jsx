@@ -7,7 +7,9 @@ function App() {
 
   return (
     <>
-      <h1 className="text-4xl text-center">Password Generator</h1>
+      <header className="text-white">
+        <h1 className="text-2xl lg:text-4xl text-center">Password Generator</h1>
+      </header>
     </>
   );
 }
