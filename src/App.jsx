@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <h1>Password Generator</h1>
+      <h1 className="text-4xl text-center">Password Generator</h1>
     </>
   );
 }
