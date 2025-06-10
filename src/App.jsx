@@ -55,7 +55,10 @@ function App() {
               className="py-2 px-3 bg-gray-300 w-full rounded-l-2xl lg:rounded-l-3xl"
               ref={passwordRef}
             />
-            <button className="bg-blue-800 text-white px-3 py-2 w-20 lg:w-28 shrink-0 cursor-pointer rounded-r-2xl lg:rounded-r-3xl shadow-2xl">
+            <button
+              className="bg-blue-800 text-white px-3 py-2 w-20 lg:w-28 shrink-0 cursor-pointer rounded-r-2xl lg:rounded-r-3xl shadow-2xl"
+              onClick={copytoClipboard}
+            >
               Copy
             </button>
           </div>
