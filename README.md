@@ -111,7 +111,7 @@ The core logic resides in the `App` component:
 ## 📷 Screenshot
 
 ```
-![Password Generator Screenshot](/public/image.png)
+![Password Generator Screenshot](image.png)
 ```
 
 ---
