@@ -110,9 +110,7 @@ The core logic resides in the `App` component:
 
 ## 📷 Screenshot
 
-```
-![Password Generator Screenshot](image.png)
-```
+![Password Generator Screenshot](src/assets/image.png)
 
 ---
 
