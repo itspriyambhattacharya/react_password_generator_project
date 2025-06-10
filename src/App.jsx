@@ -48,19 +48,49 @@ function App() {
             </button>
           </div>
           <div className="flex gap-2 text-white flex-wrap">
-            <input
-              type="range"
-              name="rangeInp"
-              id="rangeInp"
-              min={8}
-              max={50}
-              value={length}
-              className="cursor-pointer"
-              onChange={(e) => {
-                setLength(e.target.value);
-              }}
-            />
-            <label htmlFor="rangeInp">Length: {length}</label>
+            <div className="flex justify-center items-center gap-1">
+              <input
+                type="range"
+                name="rangeInp"
+                id="rangeInp"
+                min={8}
+                max={50}
+                value={length}
+                className="cursor-pointer"
+                onChange={(e) => {
+                  setLength(e.target.value);
+                }}
+              />
+              <label htmlFor="rangeInp">Length: {length}</label>
+            </div>
+            <div className="flex justify-center items-center gap-1">
+              <input
+                type="checkbox"
+                name="numberAllowed"
+                id="numberAllowed"
+                className="cursor-pointer"
+                onChange={() => {
+                  setNumberAllowed((prev) => {
+                    !prev;
+                  });
+                }}
+              />
+              <label htmlFor="numberAllowed"> Numbers</label>
+            </div>
+            <div className="flex justify-center items-center gap-1">
+              <input
+                type="checkbox"
+                name="charAllowed"
+                id="charAllowed"
+                className="cursor-pointer"
+                onChange={() => {
+                  setCharacterAllowed((prev) => {
+                    !prev;
+                  });
+                }}
+              />
+              <label htmlFor="charAllowed"> Special Characters</label>
+            </div>
           </div>
         </div>
       </main>
