@@ -1,10 +1,13 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 function App() {
   const [length, setLength] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [characterAllowed, setCharacterAllowed] = useState(false);
   const [password, setPassword] = useState("");
+
+  // password useRef
+  const passwordRef = useRef(null);
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -20,11 +23,13 @@ function App() {
     }
 
     for (let i = 0; i < length; i++) {
-      let randIdx = Math.floor(Math.random() * str.length + 1);
+      let randIdx = Math.floor(Math.random() * str.length);
       pass += str[randIdx];
     }
     setPassword(pass);
   }, [length, numberAllowed, characterAllowed]);
+
+  const copytoClipboard = useCallback(() => {}, [password]);
 
   useEffect(() => {
     passwordGenerator();
@@ -46,6 +51,7 @@ function App() {
               value={password}
               readOnly
               className="py-2 px-3 bg-gray-300 w-full rounded-l-2xl lg:rounded-l-3xl"
+              ref={passwordRef}
             />
             <button className="bg-blue-800 text-white px-3 py-2 w-20 lg:w-28 shrink-0 cursor-pointer rounded-r-2xl lg:rounded-r-3xl shadow-2xl">
               Copy
@@ -75,7 +81,7 @@ function App() {
                 className="cursor-pointer"
                 onChange={() => {
                   setNumberAllowed((prev) => {
-                    !prev;
+                    return !prev;
                   });
                 }}
               />
@@ -89,7 +95,7 @@ function App() {
                 className="cursor-pointer"
                 onChange={() => {
                   setCharacterAllowed((prev) => {
-                    !prev;
+                    return !prev;
                   });
                 }}
               />
