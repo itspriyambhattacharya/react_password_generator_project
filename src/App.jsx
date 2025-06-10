@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 function App() {
   const [length, setLength] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [characterAllowed, setCharacterAllowed] = useState(false);
   const [password, setPassword] = useState("Bhgrzxxs");
+
+  const passwordGenerator = useCallback(() => {
+    let pass = "";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    let num = "0123456789";
+    let sChar = "@#!$%^&*";
+
+    if (numberAllowed) {
+      str += num;
+    }
+    if (characterAllowed) {
+      str += sChar;
+    }
+
+    for (let i = 0; i < length; i++) {
+      let randIdx = Math.floor(Math.random() * str.length + 1);
+      pass += str[randIdx];
+    }
+    setPassword(pass);
+  }, [length, numberAllowed, characterAllowed]);
 
   return (
     <>
