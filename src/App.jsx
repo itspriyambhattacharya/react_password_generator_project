@@ -31,6 +31,11 @@ function App() {
       <header className="text-white">
         <h1 className="text-2xl lg:text-4xl text-center">Password Generator</h1>
       </header>
+      <body>
+        <div className="mt-3.5 mx-auto w-fit p-2 rounded-md bg-gray-500">
+          hello
+        </div>
+      </body>
     </>
   );
 }
