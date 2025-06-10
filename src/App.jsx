@@ -4,7 +4,7 @@ function App() {
   const [length, setLength] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [characterAllowed, setCharacterAllowed] = useState(false);
-  const [password, setPassword] = useState("Bhgrzxxs");
+  const [password, setPassword] = useState("");
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -35,14 +35,14 @@ function App() {
         <div className="mt-3.5 mx-auto w-fit lg:min-w-2xl p-4 rounded-md bg-gray-600 flex justify-center">
           <input
             type="text"
-            name="password"
+            name="passwordInp"
             id="passswordInp"
-            placeholder="password"
+            placeholder="Password"
             value={password}
             readOnly
             className="py-2 px-3 bg-gray-300 w-full rounded-l-2xl lg:rounded-l-3xl"
           />
-          <button className="bg-blue-800 text-white px-3 py-2 w-16 lg:w-28 shrink-0 cursor-pointer rounded-r-2xl lg:rounded-r-3xl">
+          <button className="bg-blue-800 text-white px-3 py-2 w-20 lg:w-28 shrink-0 cursor-pointer rounded-r-2xl lg:rounded-r-3xl shadow-2xl">
             Copy
           </button>
         </div>
