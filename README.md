@@ -1,7 +1,3 @@
-# Password Generator Project
-
-![Password Generator Screenshot](insert_image_here)
-
 ## 📌 Overview
 
 This project is a **dynamic and customizable password generator** built using React. It allows users to generate secure passwords based on various criteria, such as length, inclusion of numbers, and special characters. The application features a clean and responsive UI, ensuring seamless usage across devices.
